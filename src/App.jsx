@@ -240,6 +240,98 @@ const BeautyFixLanding = () => {
     html {
       scroll-behavior: smooth;
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .mobile-book-btn {
+        display: inline-block !important;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 2.25rem !important;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem !important;
+      }
+
+      .hero-buttons {
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      .hero-stats {
+        justify-content: center !important;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .pricing-card-popular {
+        transform: scale(1) !important;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center;
+      }
+
+      .floating-badge {
+        display: none !important;
+      }
+
+      .credentials-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .section-title {
+        font-size: 1.75rem !important;
+      }
+
+      .section-padding {
+        padding: 3rem 1rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.875rem !important;
+      }
+
+      .nav-logo {
+        font-size: 1.25rem !important;
+      }
+    }
   `;
 
   return (
@@ -262,11 +354,30 @@ const BeautyFixLanding = () => {
         boxShadow: '0 2px 20px rgba(0,0,0,0.05)',
         animation: 'fade-in-up 0.6s ease-out'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span style={{ fontSize: '1.5rem', fontWeight: '700', color: colors.navy }}>BEAUTY</span>
           <span style={{ fontSize: '1.5rem', fontWeight: '700', color: colors.blue }}>FIX</span>
         </div>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+        {/* Mobile Book Now Button */}
+        <a
+          href="https://booking.hydreight.com/widget-business/yd92b"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-book-btn"
+          style={{
+            display: 'none',
+            backgroundColor: colors.blue,
+            color: colors.white,
+            padding: '0.5rem 1rem',
+            borderRadius: '50px',
+            fontWeight: '600',
+            fontSize: '0.875rem',
+            textDecoration: 'none'
+          }}
+        >
+          Book Now
+        </a>
+        <div className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           {['Services', 'Pricing', 'About', 'Service Areas'].map((item, i) => (
             <a
               key={i}
@@ -363,7 +474,7 @@ const BeautyFixLanding = () => {
           transform: `translate(-50%, -50%)`
         }} />
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+        <div className="hero-grid" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
             <div style={{ marginBottom: '1.5rem', animation: 'fade-in-up 0.6s ease-out 0.2s both' }}>
               <span style={{
@@ -418,7 +529,7 @@ const BeautyFixLanding = () => {
               "Beauty Finds You"
             </p>
 
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', animation: 'fade-in-up 0.6s ease-out 0.6s both' }}>
+            <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', animation: 'fade-in-up 0.6s ease-out 0.6s both' }}>
               <a
                 href="https://booking.hydreight.com/widget-business/yd92b"
                 target="_blank"
@@ -483,7 +594,7 @@ const BeautyFixLanding = () => {
               </a>
             </div>
 
-            <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', animation: 'fade-in-up 0.6s ease-out 0.7s both' }}>
+            <div className="hero-stats" style={{ display: 'flex', gap: '2rem', marginTop: '3rem', animation: 'fade-in-up 0.6s ease-out 0.7s both' }}>
               <div>
                 <div style={{ fontSize: '2rem', fontWeight: '700', color: colors.navy }}>
                   <AnimatedCounter end={500} suffix="+" />
@@ -565,7 +676,7 @@ const BeautyFixLanding = () => {
             </div>
 
             {/* Floating badges */}
-            <div style={{
+            <div className="floating-badge" style={{
               position: 'absolute',
               top: '-20px',
               right: '-20px',
@@ -596,7 +707,7 @@ const BeautyFixLanding = () => {
               </div>
             </div>
 
-            <div style={{
+            <div className="floating-badge" style={{
               position: 'absolute',
               bottom: '40px',
               left: '-30px',
@@ -645,7 +756,7 @@ const BeautyFixLanding = () => {
             </div>
           </FadeInSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
             {services.map((service, index) => (
               <FadeInSection key={index} delay={index * 150}>
                 <div
@@ -739,7 +850,7 @@ const BeautyFixLanding = () => {
         }} />
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
             <FadeInSection direction="right">
               <div>
                 <span style={{ color: colors.blue, fontWeight: '600', letterSpacing: '0.1em', fontSize: '0.875rem' }}>MEET BADRIA</span>
@@ -756,7 +867,7 @@ const BeautyFixLanding = () => {
                   you'd expect from a top medical spa — but in the comfort of your own home.
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                <div className="credentials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
                   {[
                     { icon: GraduationCap, title: 'RN Licensed', desc: 'State of Illinois' },
                     { icon: Syringe, title: 'Certified', desc: 'Aesthetic Injector' },
@@ -876,7 +987,7 @@ const BeautyFixLanding = () => {
             </div>
           </FadeInSection>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', alignItems: 'center' }}>
+          <div className="pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', alignItems: 'center' }}>
             {packages.map((pkg, index) => (
               <FadeInSection key={index} delay={index * 150}>
                 <div
@@ -1148,7 +1259,7 @@ const BeautyFixLanding = () => {
               padding: '3rem',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+              <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -1178,7 +1289,7 @@ const BeautyFixLanding = () => {
                   onBlur={(e) => e.target.style.borderColor = 'transparent'}
                 />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+              <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <input
                   type="tel"
                   placeholder="Phone Number"
@@ -1274,7 +1385,7 @@ const BeautyFixLanding = () => {
         padding: '4rem 2rem 2rem'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', marginBottom: '3rem' }}>
+          <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', marginBottom: '3rem' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '1rem' }}>
                 <span style={{ fontSize: '1.25rem', fontWeight: '700' }}>BEAUTY</span>
@@ -1370,7 +1481,7 @@ const BeautyFixLanding = () => {
             </div>
           </div>
 
-          <div style={{
+          <div className="footer-bottom" style={{
             borderTop: '1px solid rgba(255,255,255,0.1)',
             paddingTop: '2rem',
             display: 'flex',
