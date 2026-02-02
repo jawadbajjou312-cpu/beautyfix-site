@@ -15,7 +15,8 @@ import {
   Facebook,
   Star,
   Check,
-  ArrowRight
+  ArrowRight,
+  Pill
 } from 'lucide-react';
 
 // Animated Counter Component
@@ -122,8 +123,8 @@ const BeautyFixLanding = () => {
   const services = [
     {
       icon: Syringe,
-      title: 'Botox & Dysport',
-      description: 'Smooth fine lines and wrinkles with expert precision. FDA-approved neurotoxins administered by a registered nurse.',
+      title: 'Botox',
+      description: 'Smooth fine lines and wrinkles with expert precision. FDA-approved neurotoxin administered by a registered nurse.',
       price: '$14/unit · $250 flat rate',
       features: ['Forehead lines', 'Crow\'s feet', 'Frown lines', 'Lip flip']
     },
@@ -140,13 +141,20 @@ const BeautyFixLanding = () => {
       description: 'Targeted vitamin cocktails for energy, wellness, and beauty enhancement.',
       price: 'Starting at $35',
       features: ['B12 shots', 'Biotin boost', 'Glutathione', 'Lipotropic blend']
+    },
+    {
+      icon: Pill,
+      title: 'GLP-1 Medications',
+      description: 'Medically supervised weight management with GLP-1 medications. Personalized treatment plans for sustainable results.',
+      price: 'Starting at $175',
+      features: ['Weight management', 'Appetite control', 'Medical supervision', 'Personalized dosing']
     }
   ];
 
   const packages = [
     {
       name: 'Glow Getter',
-      price: '$199',
+      price: '$249',
       description: 'Perfect introduction to BeautyFix',
       includes: ['20 units Botox', 'B12 injection', 'Complimentary consultation'],
       popular: false
@@ -155,14 +163,14 @@ const BeautyFixLanding = () => {
       name: 'VIP Refresh',
       price: '$399',
       description: 'Our most popular package',
-      includes: ['40 units Botox OR Dysport', 'IV Hydration (Beauty Drip)', 'Vitamin injection of choice', 'Priority scheduling'],
+      includes: ['40 units Botox', 'IV Hydration (Beauty Drip)', 'Vitamin injection of choice', 'Priority scheduling'],
       popular: true
     },
     {
       name: 'Ultimate Luxe',
-      price: '$599',
+      price: '$499',
       description: 'The complete BeautyFix experience',
-      includes: ['60 units Botox OR Dysport', 'Premium IV Therapy', '2 Vitamin injections', 'VIP membership perks', 'Monthly touch-up discount'],
+      includes: ['50 units Botox', 'Premium IV Therapy', '2 Vitamin injections', 'Monthly touch-up discount'],
       popular: false
     }
   ];
@@ -756,7 +764,7 @@ const BeautyFixLanding = () => {
             </div>
           </FadeInSection>
 
-          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
             {services.map((service, index) => (
               <FadeInSection key={index} delay={index * 150}>
                 <div
@@ -1320,9 +1328,10 @@ const BeautyFixLanding = () => {
                   onBlur={(e) => e.target.style.borderColor = 'transparent'}
                 >
                   <option>Select Service Interest</option>
-                  <option>Botox / Dysport</option>
+                  <option>Botox</option>
                   <option>IV Hydration</option>
                   <option>Vitamin Injections</option>
+                  <option>GLP-1 Medications</option>
                   <option>Multiple Services</option>
                 </select>
               </div>
@@ -1399,7 +1408,7 @@ const BeautyFixLanding = () => {
             <div>
               <h4 style={{ fontWeight: '600', marginBottom: '1rem' }}>Services</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {['Botox & Dysport', 'IV Hydration', 'Vitamin Injections', 'Packages'].map((item, i) => (
+                {['Botox', 'IV Hydration', 'Vitamin Injections', 'GLP-1 Medications'].map((item, i) => (
                   <li key={i} style={{ marginBottom: '0.5rem' }}>
                     <a
                       href="#"
